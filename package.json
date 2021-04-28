@@ -1,0 +1,15 @@
+{
+  "name": "get-my-ip",
+  "version": "1.0.0",
+  "description": "Esse projeto obtem o Ip quente da máquina",
+  "main": "index.js",
+  "dependencies": {
+    "public-ip": "^4.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fábio, Fernanda.",
+  "license": "MIT"
+}
