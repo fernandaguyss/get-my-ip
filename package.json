@@ -4,11 +4,14 @@
   "description": "Esse projeto obtem o Ip quente da máquina",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
     "public-ip": "^4.0.3"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r dotenv/config index.js"
   },
   "author": "Fábio, Fernanda.",
   "license": "MIT"
