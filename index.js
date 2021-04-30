@@ -1,10 +1,29 @@
 const publicIp = require('public-ip')
 const dns = require('dns')
+const axios = require('axios')
+require('dotenv').config()
+
+let lastIp = null
 
 function ConnectionException(message) {
   this.message = message
   this.name = 'ConnectionException'
 }
+async function saveIp(ip) {
+  try {
+    const response = await axios({
+      url: process.env.ENDPOINT, 
+      method: 'POST',
+      data: {
+        ip,
+      },
+    })
+    return response
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 async function getMyIp() {
   try {
     const meuIp = await publicIp.v4()
@@ -34,6 +53,15 @@ async function execute() {
 
     const meuIp = await getMyIp()
     console.log(meuIp)
+
+    if (meuIp !== lastIp) {
+      const response = await saveIp(meuIp)
+      console.log('meu ip mudou', response)
+      lastIp = meuIp
+    }
+
+    const response = await saveIp(meuIp)
+    console.log(response)
   } catch (error) {
     console.log(error)
   }

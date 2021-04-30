@@ -1,1 +1,5 @@
-leia-me
+Nome do Projeto: get-my-ip
+
+Descrição: O projeto tem o intuíto de verificar o Ip externo de uma máquina com NodeJs, sendo que o mesmo irá atualizar conforme a conexão com a internet. Se offline, o serviço apresentará mensagem de erro, quando online, irá fornecer o novo Ip.
+
+Desenvolvimento: Para usá-lo é necessário clonar o projeto do GitHub em um diretório de sua preferência. 
